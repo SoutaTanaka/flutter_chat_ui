@@ -32,7 +32,7 @@ class AttachmentButton extends StatelessWidget {
               0,
             ),
         child: IconButton(
-          constraints: const BoxConstraints(
+          constraints: InheritedChatTheme.of(context).theme.attachmentButtonSize ?? const BoxConstraints(
             minHeight: 24,
             minWidth: 24,
           ),

@@ -51,6 +51,7 @@ const secondaryDark = Color(0xff2b2250);
 abstract class ChatTheme {
   /// Creates a new chat theme based on provided colors and text styles.
   const ChatTheme({
+    required this.attachmentButtonSize,
     required this.attachmentButtonIcon,
     required this.attachmentButtonMargin,
     required this.backgroundColor,
@@ -104,6 +105,9 @@ abstract class ChatTheme {
     required this.userAvatarTextStyle,
     required this.userNameTextStyle,
   });
+
+  ///Size of attachment button.
+  final BoxConstraints? attachmentButtonSize;
 
   /// Icon for select attachment button.
   final Widget? attachmentButtonIcon;
@@ -286,6 +290,7 @@ class DefaultChatTheme extends ChatTheme {
   /// override only a couple of properties, otherwise create a new class
   /// which extends [ChatTheme]
   const DefaultChatTheme({
+    super.attachmentButtonSize,
     super.attachmentButtonIcon,
     super.attachmentButtonMargin,
     super.backgroundColor = neutral7,
@@ -428,6 +433,7 @@ class DarkChatTheme extends ChatTheme {
   /// override only a couple of properties, otherwise create a new class
   /// which extends [ChatTheme]
   const DarkChatTheme({
+    super.attachmentButtonSize,
     super.attachmentButtonIcon,
     super.attachmentButtonMargin,
     super.backgroundColor = dark,
